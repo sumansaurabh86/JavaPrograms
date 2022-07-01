@@ -7,19 +7,23 @@ public class IterateArray {
 
 	public static void main(String[] args) {
 		
-		ArrayList<Object> list = new ArrayList<Object>();
+		ArrayList<Integer> list = new ArrayList<>();
 		list.add(20);
 		list.add(30);
 		list.add(40);
-		list.add(50);
+		list.add(10);
 		System.out.println("Size of ArrayList: " + list.size());
 		
-		Iterator itr = list.iterator();
+		Iterator<Integer> itr = list.iterator();	// iterator() method returns Iterator object
 		while(itr.hasNext())
 		{
-			System.out.println(itr.next());
+			Integer value = itr.next();
+			System.out.println(value);
+			
+			if(value.equals(30)) {
+			itr.remove();
+			}
 		}
-		
+		System.out.println(list);
 	}
-
 }
